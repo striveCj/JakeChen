@@ -1,0 +1,71 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+  <title>ValidatorTest</title>
+  <script src="/Content/jquery-1.10.1.js"></script>
+
+  <script src="/assets/js/bootstrap.min.js"></script>
+  <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
+
+  <script src="/assets/js/validation/bootstrapvalidator.js"></script>
+
+
+  @*<link rel="stylesheet" href="/Content/bootstrapvalidator/vendor/bootstrap/css/bootstrap.css"/>
+  <link rel="stylesheet" href="/Content/bootstrapvalidator/dist/css/bootstrapValidator.css"/>
+
+  <script type="text/javascript" src="/Content/bootstrapvalidator/vendor/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/Content/bootstrapvalidator/vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="/Content/bootstrapvalidator/dist/js/bootstrapValidator.js"></script>*@
+</head>
+<body>
+<form>
+  <div class="form-group">
+    <label>Username</label>
+    <input type="text" class="form-control" name="username" />
+  </div>
+  <div class="form-group">
+    <label>Email address</label>
+    <input type="text" class="form-control" name="email" />
+  </div>
+  <div class="form-group">
+    <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
+</body>
+<script type="text/javascript">
+  $(function () {
+    $('form').bootstrapValidator({
+      message: 'This value is not valid',
+      feedbackIcons: {
+        valid: 'glyphicon glyphicon-ok',
+        invalid: 'glyphicon glyphicon-remove',
+        validating: 'glyphicon glyphicon-refresh'
+      },
+      fields: {
+        username: {
+          message: '用户名验证失败',
+          validators: {
+            notEmpty: {
+              message: '用户名不能为空'
+            }
+          }
+        },
+        email: {
+          validators: {
+            notEmpty: {
+              message: '邮箱地址不能为空'
+            }
+          }
+        }
+      }
+    });
+  });
+</script>
+</html>

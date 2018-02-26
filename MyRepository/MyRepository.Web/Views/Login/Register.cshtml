@@ -1,0 +1,163 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<!--
+BeyondAdmin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.6
+Version: 1.6.0
+Purchase: https://wrapbootstrap.com/theme/beyondadmin-adminapp-angularjs-mvc-WB06R48S4
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!--Head-->
+<head>
+  <meta charset="utf-8" />
+  <title>用户注册</title>
+
+  <meta name="description" content="register page" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="shortcut icon" href="/assets/img/favicon.png" type="image/x-icon">
+
+  <!--Basic Styles-->
+  <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link id="bootstrap-rtl-link" href="" rel="stylesheet" />
+  <link href="/assets/css/font-awesome.min.css" rel="stylesheet" />
+
+  <!--Fonts-->
+
+
+  <!--Beyond styles-->
+  <link id="beyond-link" href="/assets/css/beyond.min.css" rel="stylesheet" />
+  <link href="/assets/css/demo.min.css" rel="stylesheet" />
+  <link href="/assets/css/animate.min.css" rel="stylesheet" />
+  <link id="skin-link" href="" rel="stylesheet" type="text/css" />
+
+  <!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
+  <script src="/assets/js/skins.min.js"></script>
+</head>
+<!--Head Ends-->
+<!--Body-->
+<body>
+<div class="register-container animated fadeInDown">
+  <div class="registerbox bg-white" style="height: 100% !important">
+    <div class="registerbox-title">注册</div>
+
+    <div class="registerbox-caption ">请填写您的详细信息</div>
+
+      <form id="registrationForm" style="margin-top: 10px"  method="post" class="form-horizontal"
+            data-bv-message="This value is not valid"
+            data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
+            data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
+            data-bv-feedbackicons-validating="glyphicon glyphicon-refresh">
+
+        <div class="form-group" style="width: 350px !important">
+          <label class="col-lg-4 control-label">用户名</label>
+          <div class="col-lg-8">
+            <input type="text" class="form-control" name="username"
+                   data-bv-message="用户名无效。"
+                   data-bv-notempty="true"
+                   data-bv-notempty-message="用户名是必需的，不能是空的。"
+                   data-bv-regexp="true"
+                   data-bv-regexp-regexp="[a-zA-Z0-9_\.]+"
+                   data-bv-regexp-message="用户名只能由字母、数字、点和下划线组成。"
+                   data-bv-stringlength="true"
+                   data-bv-stringlength-min="6"
+                   data-bv-stringlength-max="30"
+                   data-bv-stringlength-message="用户名长度必须在6-30个字符之间。"
+                   data-bv-different="true"
+                   data-bv-different-field="password"
+                   data-bv-different-message="用户名和密码不可能相同。" />
+          </div>
+        </div>
+
+
+
+        <div class="form-group" style="width: 350px !important">
+          <label class="col-lg-4 control-label">密码</label>
+          <div class="col-lg-8">
+            <input type="password" class="form-control" name="password"
+                   data-bv-notempty="true"
+                   data-bv-notempty-message="密码是必需的，不能是空的。"
+                   data-bv-identical="true"
+                   data-bv-identical-field="confirmPassword"
+                   data-bv-identical-message="密码和确认密码不一致。"
+                   data-bv-different="true"
+                   data-bv-different-field="username"
+                   data-bv-different-message="密码不能与用户名相同。" />
+          </div>
+        </div>
+        <div class="form-group" style="width: 350px !important">
+          <label class="col-lg-4 control-label">确认密码</label>
+          <div class="col-lg-8">
+            <input type="password" class="form-control" name="confirmPassword"
+                   data-bv-notempty="true"
+                   data-bv-notempty-message="确认密码是必需的，不能是空的。"
+                   data-bv-identical="true"
+                   data-bv-identical-field="password"
+                   data-bv-identical-message="密码和确认密码不一致。"
+                   data-bv-different="true"
+                   data-bv-different-field="username"
+                   data-bv-different-message="密码不能与用户名相同。" />
+          </div>
+        </div>
+        <div class="form-group" style="width: 350px !important">
+          <label class="col-lg-4 control-label">邮箱地址</label>
+          <div class="col-lg-8">
+            <input class="form-control" name="email" type="email"
+                   data-bv-emailaddress="true"
+                   data-bv-emailaddress-message="输入不是一个有效的电子邮件地址。" />
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-lg-offset-4 col-lg-8">
+            <input class="btn btn-palegreen" id="BtnRegister" type="submit" value="提交" />
+          </div>
+        </div>
+      </form>
+    </div>
+  <div class="logobox">
+  </div>
+</div>
+
+<!--Basic Scripts-->
+<script src="/assets/js/jquery.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+<script src="/assets/js/validation/bootstrapvalidator.js"></script>
+<script src="/assets/js/slimscroll/jquery.slimscroll.min.js"></script>
+
+<!--Beyond Scripts-->
+<script src="/assets/js/beyond.min.js"></script>
+
+</body>
+<script type="text/javascript">
+  $("#registrationForm").bootstrapValidator();
+  $("#BtnRegister").click(function (e) {
+    $('#registrationForm').bootstrapValidator('validate');
+    if ($('#registrationForm').data('bootstrapValidator').isValid()) {
+    
+      $.ajax({
+        url: "/Login/UserRegister",
+        type: 'post',
+        dataType: "json",
+        data: $('#registrationForm input[name!="confirmPassword"]').serializeArray(),
+        success: function (data) {
+          alert(data.message);
+          if (data.successful) {
+            location.href = "/Login/Index";
+          } else {
+            $('#registrationForm').bootstrapValidator('disableSubmitButtons', false);
+          }
+        }
+      });
+    }
+    return false;
+  });
+</script>
+
+<!--Body Ends-->
+</html>

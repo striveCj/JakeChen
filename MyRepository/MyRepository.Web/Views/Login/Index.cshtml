@@ -1,0 +1,134 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<!--
+BeyondAdmin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.6
+Version: 1.6.0
+Purchase: https://wrapbootstrap.com/theme/beyondadmin-adminapp-angularjs-mvc-WB06R48S4
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!--Head-->
+<head>
+  <meta charset="utf-8" />
+  <title>用户登录</title>
+
+  <meta name="description" content="login page" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="shortcut icon" href="//assets/img/favicon.png" type="image/x-icon">
+
+  <!--Basic Styles-->
+  <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link id="bootstrap-rtl-link" href="" rel="stylesheet" />
+  <link href="/assets/css/font-awesome.min.css" rel="stylesheet" />
+
+  <!--Beyond styles-->
+  <link id="beyond-link" href="/assets/css/beyond.min.css" rel="stylesheet" />
+  <link href="/assets/css/demo.min.css" rel="stylesheet" />
+  <link href="/assets/css/animate.min.css" rel="stylesheet" />
+  <link id="skin-link" href="" rel="stylesheet" type="text/css" />
+
+  <!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
+  <script src="/assets/js/skins.min.js"></script>
+
+
+</head>
+<!--Head Ends-->
+<!--Body-->
+<body>
+<div class="login-container animated fadeInDown">
+  
+  <div class="loginbox bg-white">
+    <div class="loginbox-title">登录</div>
+    <form method="post">
+      <div class="loginbox-forgot" style="margin-top: 10px">
+        <div class="form-group" style="width: 220px">
+          <input type="text" class="form-control" id="username" name="username" placeholder="用户名" />
+        </div>
+      <div class="form-group" style="width: 220px">
+        <input type="password" class="form-control" id="password" name="password" placeholder="密码" />
+      </div>
+      </div>
+        @*<div class="loginbox-forgot">
+          <a href="default.htm">忘记密码?</a>
+        </div>*@
+        <div class="loginbox-submit">
+          <input type="submit" id="BtnLogin" onclick="" class="btn btn-primary btn-block" value="登录">
+        </div>
+</form>
+    <div class="loginbox-signup">
+      <a href="/Login/Register">注册</a>
+    </div>
+  </div>
+  <div class="logobox">
+  </div>
+</div>
+
+  <!--Basic Scripts-->
+  <script src="/assets/js/jquery.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+<script src="/assets/js/validation/bootstrapvalidator.js"></script>
+  <script src="/assets/js/slimscroll/jquery.slimscroll.min.js"></script>
+
+  <!--Beyond Scripts-->
+  <script src="/assets/js/beyond.js"></script>
+<script type="text/javascript">
+  $(function () {
+    $('form').bootstrapValidator({
+      message: '您输入的值无效',
+      feedbackIcons: {
+        valid: 'glyphicon glyphicon-ok',
+        invalid: 'glyphicon glyphicon-remove',
+        validating: 'glyphicon glyphicon-refresh'
+      },
+      fields: {
+        username: {
+          message: '用户名验证失败',
+          validators: {
+            notEmpty: {
+              message: '用户名不能为空'
+            }
+          }
+        },
+        password: {
+          validators: {
+            notEmpty: {
+              message: '密码不能为空'
+            }
+          }
+        }
+      }
+    });
+  });
+
+
+  $("#BtnLogin").click(function (e) {
+    $('form').bootstrapValidator('validate');
+    if ($('form').data('bootstrapValidator').isValid()) {
+      $.ajax({
+        url: "/Login/Login",
+        type: 'post',
+        dataType: "json",
+        data: $('form').serializeArray(),
+        success: function (data) {
+          if (data.successful) {
+            location.href = "/Home/Index";
+          } else {
+            alert(data.message);
+            $('form').bootstrapValidator('disableSubmitButtons', false);
+          }
+        }
+      });
+    }
+    return false;
+  });
+</script>
+
+</body>
+<!--Body Ends-->
+</html>
