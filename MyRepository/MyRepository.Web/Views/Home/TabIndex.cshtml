@@ -14,9 +14,9 @@ Purchase: https://wrapbootstrap.com/theme/beyondadmin-adminapp-angularjs-mvc-WB0
 <!-- Head -->
 <head>
   <meta charset="utf-8" />
-  <title>Data Tables</title>
+  <title>Tabs and Accordions</title>
 
-  <meta name="description" content="data tables" />
+  <meta name="description" content="tabs and accordions" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -37,9 +37,6 @@ Purchase: https://wrapbootstrap.com/theme/beyondadmin-adminapp-angularjs-mvc-WB0
   <link href="/assets/css/typicons.min.css" rel="stylesheet" />
   <link href="/assets/css/animate.min.css" rel="stylesheet" />
   <link id="skin-link" href="" rel="stylesheet" type="text/css" />
-
-  <!--Page Related styles-->
-  <link href="/assets/css/datatables.bootstrap.css" rel="stylesheet" />
 
   <!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
   <script src="/assets/js/skins.min.js"></script>
@@ -424,7 +421,7 @@ Purchase: https://wrapbootstrap.com/theme/beyondadmin-adminapp-angularjs-mvc-WB0
             </a>
           </li>
           <!--UI Elements-->
-          <li>
+          <li class="active open">
             <a href="#" class="menu-dropdown">
               <i class="menu-icon fa fa-desktop"></i>
               <span class="menu-text"> Elements </span>
@@ -473,7 +470,7 @@ Purchase: https://wrapbootstrap.com/theme/beyondadmin-adminapp-angularjs-mvc-WB0
                   </li>
                 </ul>
               </li>
-              <li>
+              <li class="active">
                 <a href="tabs.html">
                   <span class="menu-text">Tabs & Accordions</span>
                 </a>
@@ -506,7 +503,7 @@ Purchase: https://wrapbootstrap.com/theme/beyondadmin-adminapp-angularjs-mvc-WB0
             </ul>
           </li>
           <!--Tables-->
-          <li class="active open">
+          <li>
             <a href="#" class="menu-dropdown">
               <i class="menu-icon fa fa-table"></i>
               <span class="menu-text"> Tables </span>
@@ -520,7 +517,7 @@ Purchase: https://wrapbootstrap.com/theme/beyondadmin-adminapp-angularjs-mvc-WB0
                   <span class="menu-text">Simple & Responsive</span>
                 </a>
               </li>
-              <li class="active">
+              <li>
                 <a href="tables-data.html">
                   <span class="menu-text">Data Tables</span>
                 </a>
@@ -815,7 +812,6 @@ Purchase: https://wrapbootstrap.com/theme/beyondadmin-adminapp-angularjs-mvc-WB0
                   <span class="menu-text">Persian Layout</span>
                 </a>
               </li>
-
             </ul>
           </li>
           <li>
@@ -1059,7 +1055,7 @@ Purchase: https://wrapbootstrap.com/theme/beyondadmin-adminapp-angularjs-mvc-WB0
           </ul>
           <div class="send-message">
             <span class="input-icon icon-right">
-              <textarea rows="4" class="form-control" placeholder="Type your message"></textarea>
+              <textarea rows="4" class="form-control" placeholde <!-- /Page Sidebar --> r="Type your message"></textarea>
               <i class="fa fa-camera themeprimary"></i>
             </span>
           </div>
@@ -1076,9 +1072,9 @@ Purchase: https://wrapbootstrap.com/theme/beyondadmin-adminapp-angularjs-mvc-WB0
               <a href="#">Home</a>
             </li>
             <li>
-              <a href="#">Tables</a>
+              <a href="#">Elements</a>
             </li>
-            <li class="active">Data Tables</li>
+            <li class="active">Tabs & Accordions</li>
           </ul>
         </div>
         <!-- /Page Breadcrumb -->
@@ -1086,10 +1082,10 @@ Purchase: https://wrapbootstrap.com/theme/beyondadmin-adminapp-angularjs-mvc-WB0
         <div class="page-header position-relative">
           <div class="header-title">
             <h1>
-              Data Tables
+              Elements
               <small>
                 <i class="fa fa-angle-right"></i>
-                jquery plugin for data management
+                Tabs and Accordions
               </small>
             </h1>
           </div>
@@ -1111,140 +1107,631 @@ Purchase: https://wrapbootstrap.com/theme/beyondadmin-adminapp-angularjs-mvc-WB0
         <!-- Page Body -->
         <div class="page-body">
           <div class="row">
-            <div class="col-xs-12 col-md-12">
-              <div class="widget">
-                <div class="widget-header ">
-                  <span class="widget-caption">Simple DataTable</span>
-                  <div class="widget-buttons">
-                    <a href="#" data-toggle="maximize">
-                      <i class="fa fa-expand"></i>
-                    </a>
-                    <a href="#" data-toggle="collapse">
-                      <i class="fa fa-minus"></i>
-                    </a>
-                    <a href="#" data-toggle="dispose">
-                      <i class="fa fa-times"></i>
-                    </a>
+            <div class="col-lg-12 col-sm-12 col-xs-12">
+              <h5 class="row-title"><i class="typcn typcn-folder themeprimary"></i>Simple Tabs</h5>
+              <div class="row">
+                <div class="col-lg-6 col-sm-6 col-xs-12">
+                  <div class="tabbable">
+                    <ul class="nav nav-tabs" id="myTab">
+                      <li class="active">
+                        <a data-toggle="tab" href="#home">
+                          Home
+                        </a>
+                      </li>
+
+                      <li class="tab-red">
+                        <a data-toggle="tab" href="#profile">
+                          Profile
+                        </a>
+                      </li>
+
+                      <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                          Dropdown
+                          <b class="caret"></b>
+                        </a>
+
+                        <ul class="dropdown-menu dropdown-blue">
+                          <li>
+                            <a data-toggle="tab" href="#dropdown1">fat</a>
+                          </li>
+
+                          <li>
+                            <a data-toggle="tab" href="#dropdown2">mdo</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+
+                    <div class="tab-content">
+                      <div id="home" class="tab-pane in active">
+                        <p>Raw denim you probably haven't heard of them jean shorts Austin.</p>
+                      </div>
+
+                      <div id="profile" class="tab-pane">
+                        <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid.</p>
+                      </div>
+
+                      <div id="dropdown1" class="tab-pane">
+                        <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade.</p>
+                      </div>
+
+                      <div id="dropdown2" class="tab-pane">
+                        <p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="horizontal-space"></div>
+
+                </div>
+                <div class="col-lg-6 col-sm-6 col-xs-12">
+                  <div class="tabbable tabs-below">
+                    <div class="tab-content">
+                      <div id="home2" class="tab-pane in active">
+                        <p>Raw denim you probably haven't heard of them jean shorts Austin.</p>
+                      </div>
+
+                      <div id="profile2" class="tab-pane">
+                        <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid.</p>
+                      </div>
+
+                      <div id="dropdown12" class="tab-pane">
+                        <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade.</p>
+                      </div>
+                    </div>
+
+                    <ul class="nav nav-tabs" id="myTab2">
+                      <li class="active">
+                        <a data-toggle="tab" href="#home2">Home</a>
+                      </li>
+
+                      <li>
+                        <a data-toggle="tab" href="#profile2">Profile</a>
+                      </li>
+
+                      <li>
+                        <a data-toggle="tab" href="#dropdown12">More</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="horizontal-space"></div>
+
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-6 col-sm-6 col-xs-12">
+                  <div class="tabbable tabs-left">
+                    <ul class="nav nav-tabs" id="myTab3">
+                      <li class="active tab-sky">
+                        <a data-toggle="tab" href="#home3">
+                          Home
+                        </a>
+                      </li>
+
+                      <li class="tab-red">
+                        <a data-toggle="tab" href="#profile3">
+                          Profile
+                        </a>
+                      </li>
+
+                      <li class="tab-orange">
+                        <a data-toggle="tab" href="#dropdown13">
+                          More
+                        </a>
+                      </li>
+                    </ul>
+
+                    <div class="tab-content">
+                      <div id="home3" class="tab-pane in active">
+                        <p>Raw denim you probably haven't heard of them jean shorts Austin.</p>
+                        <p>Raw denim you probably haven't heard of them jean shorts Austin.</p>
+                      </div>
+
+                      <div id="profile3" class="tab-pane">
+                        <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid.</p>
+                        <p>Raw denim you probably haven't heard of them jean shorts Austin.</p>
+                      </div>
+
+                      <div id="dropdown13" class="tab-pane">
+                        <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade.</p>
+                        <p>Raw denim you probably haven't heard of them jean shorts Austin.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="horizontal-space"></div>
+                </div>
+                <div class="col-lg-6 col-sm-6 col-xs-12">
+                  <div class="tabbable tabs-right">
+                    <ul class="nav nav-tabs" id="myTab4">
+                      <li class="active tab-green">
+                        <a data-toggle="tab" href="#home4">Home</a>
+                      </li>
+
+                      <li class="tab-purple">
+                        <a data-toggle="tab" href="#profile4">Profile</a>
+                      </li>
+
+                      <li class="tab-darkorange">
+                        <a data-toggle="tab" href="#dropdown14">More</a>
+                      </li>
+                    </ul>
+
+                    <div class="tab-content">
+                      <div id="home4" class="tab-pane in active">
+                        <p>Raw denim you probably haven't heard of them jean shorts Austin.</p>
+                        <p>Raw denim you probably haven't heard of them jean shorts Austin.</p>
+                      </div>
+
+                      <div id="profile4" class="tab-pane">
+                        <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid.</p>
+                        <p>Raw denim you probably haven't heard of them jean shorts Austin.</p>
+                      </div>
+
+                      <div id="dropdown14" class="tab-pane">
+                        <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade.</p>
+                        <p>Raw denim you probably haven't heard of them jean shorts Austin.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="horizontal-space"></div>
+                </div>
+              </div>
+
+              <h5 class="row-title before-palegreen"><i class="fa fa-align-justify palegreen"></i>Justified Tabs</h5>
+              <div class="row">
+                <div class="col-lg-6 col-sm-6 col-xs-12">
+                  <div class="tabbable">
+                    <ul class="nav nav-tabs nav-justified" id="myTab5">
+                      <li class="active">
+                        <a data-toggle="tab" href="#home5">
+                          Home
+                        </a>
+                      </li>
+
+                      <li class="tab-red">
+                        <a data-toggle="tab" href="#profile5">
+                          Profile
+                        </a>
+                      </li>
+
+                      <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                          Dropdown
+                          <b class="caret"></b>
+                        </a>
+
+                        <ul class="dropdown-menu dropdown-blue">
+                          <li>
+                            <a data-toggle="tab" href="#dropdown5">fat</a>
+                          </li>
+
+                          <li>
+                            <a data-toggle="tab" href="#dropdown15">mdo</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+
+                    <div class="tab-content">
+                      <div id="home5" class="tab-pane in active">
+                        <p>Raw denim you probably haven't heard of them jean shorts Austin.</p>
+                      </div>
+
+                      <div id="profile5" class="tab-pane">
+                        <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid.</p>
+                      </div>
+
+                      <div id="dropdown5" class="tab-pane">
+                        <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade.</p>
+                      </div>
+
+                      <div id="dropdown15" class="tab-pane">
+                        <p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin.</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div class="widget-body">
-                  <div class="row">
-                    <div class="col-lg-12 col-sm-12 col-xs-12">
-                      <div class="widget flat radius-bordered">
-                        <div class="widget-header bg-themeprimary">
-                          <span class="widget-caption">Flat Tabs in Widget</span>
-                        </div>
+                <div class="col-lg-6 col-sm-6 col-xs-12">
+                  <div class="tabbable tabs-below">
+                    <div class="tab-content">
+                      <div id="home6" class="tab-pane in active">
+                        <p>Raw denim you probably haven't heard of them jean shorts Austin.</p>
+                      </div>
 
-                        <div class="widget-body">
-                          <div class="widget-main ">
-                            <div class="tabbable">
-                              <ul class="nav nav-tabs tabs-flat" id="myTab11">
-                                <li class="active" id="hmc">
-                                  <a data-toggle="tab" href="#home11">
-                                    花名册
-                                  </a>
+                      <div id="profile6" class="tab-pane">
+                        <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid.</p>
+                      </div>
+
+                      <div id="dropdown16" class="tab-pane">
+                        <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade.</p>
+                      </div>
+                    </div>
+
+                    <ul class="nav nav-tabs nav-justified" id="myTab6">
+                      <li class="active">
+                        <a data-toggle="tab" href="#home6">Home</a>
+                      </li>
+
+                      <li>
+                        <a data-toggle="tab" href="#profile6">Profile</a>
+                      </li>
+
+                      <li>
+                        <a data-toggle="tab" href="#dropdown16">More</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="horizontal-space"></div>
+                </div>
+              </div>
+
+              <h5 class="row-title before-yellow"><i class="glyphicon glyphicon-unchecked yellow"></i>Radius Bordered Tabs</h5>
+              <div class="row">
+                <div class="col-lg-6 col-sm-6 col-xs-12">
+                  <div class="tabbable">
+                    <ul class="nav nav-tabs" id="myTab7">
+                      <li class="active">
+                        <a data-toggle="tab" href="#home7">
+                          Home
+                        </a>
+                      </li>
+
+                      <li class="tab-red">
+                        <a data-toggle="tab" href="#profile7">
+                          Profile
+                        </a>
+                      </li>
+
+                      <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                          Dropdown
+                          <b class="caret"></b>
+                        </a>
+
+                        <ul class="dropdown-menu dropdown-blue">
+                          <li>
+                            <a data-toggle="tab" href="#dropdown7">fat</a>
+                          </li>
+
+                          <li>
+                            <a data-toggle="tab" href="#dropdown17">mdo</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+
+                    <div class="tab-content radius-bordered">
+                      <div id="home7" class="tab-pane in active">
+                        <p>Raw denim you probably haven't heard of them jean shorts Austin.</p>
+                      </div>
+
+                      <div id="profile7" class="tab-pane">
+                        <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid.</p>
+                      </div>
+
+                      <div id="dropdown7" class="tab-pane">
+                        <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade.</p>
+                      </div>
+
+                      <div id="dropdown17" class="tab-pane">
+                        <p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6 col-sm-6 col-xs-12">
+                  <div class="tabbable tabs-below">
+                    <div class="tab-content radius-bordered">
+                      <div id="home8" class="tab-pane in active">
+                        <p>Raw denim you probably haven't heard of them jean shorts Austin.</p>
+                      </div>
+
+                      <div id="profile8" class="tab-pane">
+                        <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid.</p>
+                      </div>
+
+                      <div id="dropdown8" class="tab-pane">
+                        <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade.</p>
+                      </div>
+                    </div>
+
+                    <ul class="nav nav-tabs" id="myTab8">
+                      <li class="active">
+                        <a data-toggle="tab" href="#home8">Home</a>
+                      </li>
+
+                      <li>
+                        <a data-toggle="tab" href="#profile8">Profile</a>
+                      </li>
+
+                      <li>
+                        <a data-toggle="tab" href="#dropdown8">More</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="horizontal-space"></div>
+                </div>
+              </div>
+
+              <h5 class="row-title before-darkorange"><i class="glyphicon glyphicon-magnet darkorange"></i>Tabs In Containers</h5>
+              <div class="row">
+                <div class="col-lg-6 col-sm-6 col-xs-12">
+                  <div class="widget">
+                    <div class="widget-header">
+                      <span class="widget-caption">Tabs in Widget</span>
+                    </div>
+
+                    <div class="widget-body">
+                      <div class="widget-main ">
+                        <div class="tabbable">
+                          <ul class="nav nav-tabs" id="myTab9">
+                            <li class="active">
+                              <a data-toggle="tab" href="#home9">
+                                Home
+                              </a>
+                            </li>
+
+                            <li class="tab-red">
+                              <a data-toggle="tab" href="#profile9">
+                                Messages
+                              </a>
+                            </li>
+
+                            <li class="dropdown">
+                              <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                Dropdown
+                                <b class="caret"></b>
+                              </a>
+
+                              <ul class="dropdown-menu dropdown-info">
+                                <li>
+                                  <a data-toggle="tab" href="#dropdown9">fat</a>
                                 </li>
-                                <li id="ga">
-                                  <a data-toggle="tab" href="#profile11">
-                                    个案
-                                  </a>
+
+                                <li>
+                                  <a data-toggle="tab" href="#dropdown19">mdo</a>
                                 </li>
                               </ul>
-                              <div class="tab-content tabs-flat">
-                                <div id="home11" class="tab-pane in active">
-                                  <p>   <table class="table table-striped table-bordered table-hover" id="simpledatatable">
-                                    <thead>
-                                    <tr>
-                                      <th>
-                                        编号
-                                      </th>
-                                      <th>
-                                        用户名
-                                      </th>
-                                      <th>
-                                        密码
-                                      </th>
-                                      <th>
-                                        邮箱
-                                      </th>
-                                      <th>
-                                        操作
-                                      </th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    </tbody>
-                                  </table></p>
-                                </div>
+                            </li>
+                          </ul>
 
-                                <div id="profile11" class="tab-pane">
-                                  <form id="registrationForm" style="margin-top: 10px" method="post" class="form-horizontal"
-                                        data-bv-message="This value is not valid"
-                                        data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
-                                        data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
-                                        data-bv-feedbackicons-validating="glyphicon glyphicon-refresh">
+                          <div class="tab-content">
+                            <div id="home9" class="tab-pane in active">
+                              <p>Raw denim you probably haven't heard of them jean shorts Austin.</p>
+                            </div>
 
-                                    <div class="form-group" style="width: 350px !important">
-                                      <label class="col-lg-4 control-label">用户名</label>
-                                      <div class="col-lg-8">
-                                        <input type="hidden" name="Id" id="Id"/>
-                                        <input type="text" class="form-control" id="UserName" name="UserName"
-                                               data-bv-message="用户名无效。"
-                                               data-bv-notempty="true"
-                                               data-bv-notempty-message="用户名是必需的，不能是空的。"
-                                               data-bv-regexp="true"
-                                               data-bv-regexp-regexp="[a-zA-Z0-9_\.]+"
-                                               data-bv-regexp-message="用户名只能由字母、数字、点和下划线组成。"
-                                               data-bv-stringlength="true"
-                                               data-bv-stringlength-min="6"
-                                               data-bv-stringlength-max="30"
-                                               data-bv-stringlength-message="用户名长度必须在6-30个字符之间。"
-                                               data-bv-different="true"
-                                               data-bv-different-field="password"
-                                               data-bv-different-message="用户名和密码不可能相同。"/>
-                                      </div>
-                                    </div>
+                            <div id="profile9" class="tab-pane">
+                              <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid.</p>
+                            </div>
 
+                            <div id="dropdown9" class="tab-pane">
+                              <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade.</p>
+                            </div>
 
+                            <div id="dropdown19" class="tab-pane">
+                              <p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6 col-sm-6 col-xs-12">
+                  <div class="well with-header">
+                    <div class="header bordered-darkorange">Tabs In Well</div>
+                    <div class="tabbable">
+                      <ul class="nav nav-tabs nav-justified" id="myTab10">
+                        <li class="active">
+                          <a data-toggle="tab" href="#home10">
+                            Home
+                          </a>
+                        </li>
 
-                                    <div class="form-group" style="width: 350px !important">
-                                      <label class="col-lg-4 control-label">密码</label>
-                                      <div class="col-lg-8">
-                                        <input type="password" class="form-control" id="Password" name="Password"
-                                               data-bv-notempty="true"
-                                               data-bv-notempty-message="密码是必需的，不能是空的。"
-                                               data-bv-identical="true"
-                                               data-bv-different="true"
-                                               data-bv-different-field="username"
-                                               data-bv-different-message="密码不能与用户名相同。" />
-                                      </div>
-                                    </div>
-                                   
-                                    <div class="form-group" style="width: 350px !important">
-                                      <label class="col-lg-4 control-label">邮箱地址</label>
-                                      <div class="col-lg-8">
-                                        <input class="form-control" id="Email" name="Email" type="email"
-                                               data-bv-emailaddress="true"
-                                               data-bv-emailaddress-message="输入不是一个有效的电子邮件地址。" />
-                                      </div>
-                                    </div>
-                                    <div class="form-group">
-                                      <div class="col-lg-offset-4 col-lg-8">
-                                        <input class="btn btn-palegreen" id="BtnRegister" type="submit" value="提交" />
-                                      </div>
-                                    </div>
-                                  </form>
-                                </div>
+                        <li class="tab-red">
+                          <a data-toggle="tab" href="#profile10">
+                            Messages
+                          </a>
+                        </li>
+
+                        <li class="dropdown">
+                          <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            Dropdown
+                            <b class="caret"></b>
+                          </a>
+
+                          <ul class="dropdown-menu dropdown-info">
+                            <li>
+                              <a data-toggle="tab" href="#dropdown10">fat</a>
+                            </li>
+
+                            <li>
+                              <a data-toggle="tab" href="#dropdown20">mdo</a>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+
+                      <div class="tab-content">
+                        <div id="home10" class="tab-pane in active">
+                          <p>Raw denim you probably haven't heard of them jean shorts Austin.</p>
+                        </div>
+
+                        <div id="profile10" class="tab-pane">
+                          <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid.</p>
+                        </div>
+
+                        <div id="dropdown10" class="tab-pane">
+                          <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade.</p>
+                        </div>
+
+                        <div id="dropdown20" class="tab-pane">
+                          <p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-6 col-sm-6 col-xs-12">
+                  <div class="widget flat radius-bordered">
+                    <div class="widget-header bg-themeprimary">
+                      <span class="widget-caption">Flat Tabs in Widget</span>
+                    </div>
+
+                    <div class="widget-body">
+                      <div class="widget-main ">
+                        <div class="tabbable">
+                          <ul class="nav nav-tabs tabs-flat" id="myTab11">
+                            <li class="active">
+                              <a data-toggle="tab" href="#home11">
+                                Home
+                              </a>
+                            </li>
+                            <li>
+                              <a data-toggle="tab" href="#profile11">
+                                Messages
+                              </a>
+                            </li>
+                          </ul>
+                          <div class="tab-content tabs-flat">
+                            <div id="home11" class="tab-pane in active">
+                              <p>Raw denim you probably haven't heard of them jean shorts Austin.</p>
+                            </div>
+
+                            <div id="profile11" class="tab-pane">
+                              <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6 col-sm-6 col-xs-12">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12 col-sm-12 col-xs-12">
+              <h5 class="row-title before-pink"><i class="glyphicon glyphicon-resize-vertical pink"></i>Accordions</h5>
+              <div class="row">
+                <div class="col-lg-6 col-sm-6 col-xs-12">
+                  <div class="widget">
+                    <div class="widget-header bordered-bottom bordered-blue">
+                      <span class="widget-caption">Accordion in Widget</span>
+
+                      <div class="widget-buttons">
+                        <a href="#" data-toggle="maximize">
+                          <i class="fa fa-expand"></i>
+                        </a>
+                        <a href="#" data-toggle="collapse">
+                          <i class="fa fa-minus"></i>
+                        </a>
+                        <a href="#" data-toggle="dispose">
+                          <i class="fa fa-times"></i>
+                        </a>
+                      </div>
+                    </div>
+
+                    <div class="widget-body no-padding">
+                      <div class="widget-main ">
+                        <div class="panel-group accordion" id="accordion">
+                          <div class="panel panel-default">
+                            <div class="panel-heading ">
+                              <h4 class="panel-title">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                  Collapsible Group Item #1
+                                </a>
+                              </h4>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse in">
+                              <div class="panel-body border-red">
+                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                              </div>
+                            </div>
+                          </div>
+                          <div class="panel panel-default">
+                            <div class="panel-heading">
+                              <h4 class="panel-title">
+                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                  Collapsible Group Item #2
+                                </a>
+                              </h4>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse collapse">
+                              <div class="panel-body border-palegreen">
+                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                              </div>
+                            </div>
+                          </div>
+                          <div class="panel panel-default">
+                            <div class="panel-heading">
+                              <h4 class="panel-title">
+                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                                  Collapsible Group Item #3
+                                </a>
+                              </h4>
+                            </div>
+                            <div id="collapseThree" class="panel-collapse collapse">
+                              <div class="panel-body border-magenta">
+                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
                               </div>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div class="col-lg-12 col-sm-12 col-xs-12">
+                  </div>
+                </div>
+                <div class="col-lg-6 col-sm-6 col-xs-12">
+                  <div class="panel-group accordion" id="accordions">
+                    <div class="panel panel-default">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordions" href="#collapseOnes">
+                            <i class="fa-fw fa fa-check"></i> Collapsible Group Item #1
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapseOnes" class="panel-collapse collapse in">
+                        <div class="panel-body border-red">
+                          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordions" href="#collapseTwos">
+                            Collapsible Group Item #2
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapseTwos" class="panel-collapse collapse">
+                        <div class="panel-body border-red">
+                          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordions" href="#collapseThrees">
+                            Collapsible Group Item #3
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapseThrees" class="panel-collapse collapse">
+                        <div class="panel-body border-gold">
+                          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                        </div>
+                      </div>
                     </div>
                   </div>
-               
+
                 </div>
               </div>
             </div>
@@ -1268,197 +1755,6 @@ Purchase: https://wrapbootstrap.com/theme/beyondadmin-adminapp-angularjs-mvc-WB0
   <script src="/assets/js/beyond.min.js"></script>
 
   <!--Page Related Scripts-->
-  <script src="/assets/js/datatable/jquery.datatables.min.js"></script>
-  <script src="/assets/js/datatable/zeroclipboard.js"></script>
-  <script src="/assets/js/datatable/datatables.tabletools.min.js"></script>
-<script src="/assets/js/datatable/datatables.bootstrap.min.js"></script>
-<script src="/assets/js/validation/bootstrapvalidator.js"></script>
-  @*<script src="/assets/js/datatable/datatables-init.js"></script>*@
-  <script type="text/javascript">
-    $('#simpledatatable').dataTable({
-
-      "sDom": "Tflt<'row DTTTFooter'<'col-sm-6'i><'col-sm-6'p>>",
-      "iDisplayLength": 5,
-      "oTableTools": {
-        "aButtons": [
-          "copy", "csv", "xls", "pdf", "print"
-        ],
-        "sSwfPath": "assets/swf/copy_csv_xls_pdf.swf"
-      },
-      "language": {
-        "sSearch": "",
-        "sLengthMenu": " _MENU_ ",
-        "sZeroRecords": "没有检索到数据",
-        "sInfo": "显示 _START_ 至 _END_ 条 &nbsp;&nbsp;共 _TOTAL_ 条",
-        "sInfoFiltered": "(筛选自 _MAX_ 条数据)",
-        "sInfoEmtpy": "没有数据",
-        "sProcessing": "正在加载数据...",
-        "oPaginate":
-        {
-          "sFirst": "首页",
-          "sPrevious": "前一页",
-          "sNext": "后一页",
-          "sLast": "末页"
-        }
-      },
-      "bProcessing": true, //开启读取服务器数据时显示正在加载中……特别是大数据量的时候，开启此功能比较好  
-      "bServerSide": true,//服务器处理分页，默认是false，需要服务器处理，必须true  
-      "sAjaxSource": "/User/GetList",
-      "fnServerData": function (sSource, aoData, fnCallback) {
-        $.ajax({
-          "dataType": 'json',
-          "type": "POST",
-          "url": sSource,
-          "data": aoData,
-          "success": fnCallback
-        });
-      },
-      "aoColumns": [
-        {
-          "sName": "Id",
-          "mDataProp": "Id",
-          "bSortable": false,
-          "width": '45px'
-        },
-        {
-          "sName": "UserName",
-          "mDataProp": "UserName",
-          "bSortable": false,
-          "width": '45px'
-        }, {
-          "sName": "Password",
-          "mDataProp": "Password",
-          "bSortable": false,
-          "width": '45px'
-        }, {
-          "sName": "Email",
-          "mDataProp": "Email",
-          "bSortable": false,
-          "width": '45px'
-        },
-        {
-          "mDataProp": "Id",
-          "bSortable": false,
-          "width": '45px',
-          "render": function (data, type, full) {
-            return "<a class=\"btn btn-default \" aria-expanded=\"true\" data-toggle=\"tab\" href=\"#profile11\" onclick=\"chakan('" + data + "')\">查看详细</a>" +
-              "<a class=\"btn btn-default \" style='margin-left:5px' onclick=\"shanchu('" + data + "')\">删除</a>";
-          }
-        }
-      ],
-                
-      "aaSorting": []
-    });
-
-    //Check All Functionality
-    $('#simpledatatable thead th input[type=checkbox]').change(function() {
-      var set = $("#simpledatatable tbody tr input[type=checkbox]");
-      var checked = $(this).is(":checked");
-      $(set).each(function() {
-        if (checked) {
-          $(this).prop("checked", true);
-          $(this).parents('tr').addClass("active");
-        } else {
-          $(this).prop("checked", false);
-          $(this).parents('tr').removeClass("active");
-        }
-      });
-
-    });
-    $('#simpledatatable tbody tr input[type=checkbox]').change(function() {
-      $(this).parents('tr').toggleClass("active");
-    });
-
-    function chakan(id) {
-    
-      $("#hmc").removeAttr("class");
-      $("#ga").attr("class", "active");
-      $.ajax({
-        url: "/User/GetModel",
-        type: 'post',
-        dataType: "json",
-        data: { id: id },
-        success: function (data) {
-          //alert(data);
-          //$("#id").val(data.id);
-          //$("#username")
-          $("#registrationForm").setForm(data);
-        }
-      });
-
-     
-    }
-    $("#registrationForm").bootstrapValidator();
-    $("#BtnRegister").click(function (e) {
-      $('#registrationForm').bootstrapValidator('validate');
-      if ($('#registrationForm').data('bootstrapValidator').isValid()) {
-
-        $.ajax({
-          url: "/User/Update",
-          type: 'post',
-          dataType: "json",
-          data: $('#registrationForm').serializeArray(),
-          success: function (data) {
-            alert(data.message);
-          }
-        });
-      }
-      return false;
-    });
-    function shanchu(id) {
-      $.ajax({
-        url: "/User/Delete",
-        data: { id: id },
-        type: "post",
-        datatype: "json",
-        success:function(res) {
-          alert(res.message);
-          $('#simpledatatable').DataTable().ajax.reload();
-        }
-      });
-
-      console.log(id);
-    }
-    $.fn.extend({
-      //表单加载json对象数据
-      setForm: function (jsonValue) {
-        var obj = this;
-        $.each(jsonValue, function (name, ival) {
-          var $oinput = obj.find("input[name=" + name + "]");
-          if ($oinput.attr("type") == "checkbox") {
-            if (ival !== null) {
-              var checkboxObj = $("[name=" + name + "]");
-              var checkArray = ival.split(";");
-              for (var i = 0; i < checkboxObj.length; i++) {
-                for (var j = 0; j < checkArray.length; j++) {
-                  if (checkboxObj[i].value == checkArray[j]) {
-                    checkboxObj[i].click();
-                  }
-                }
-              }
-            }
-          }
-          else if ($oinput.attr("type") == "radio") {
-            $oinput.each(function () {
-              var radioObj = $("[name=" + name + "]");
-              for (var i = 0; i < radioObj.length; i++) {
-                if (radioObj[i].value == ival) {
-                  radioObj[i].click();
-                }
-              }
-            });
-          }
-          else if ($oinput.attr("type") == "textarea") {
-            obj.find("[name=" + name + "]").html(ival);
-          }
-          else {
-            obj.find("[name=" + name + "]").val(ival);
-          }
-        })
-
-      }
-    });
-  </script>
 
 </body>
 <!--  /Body -->

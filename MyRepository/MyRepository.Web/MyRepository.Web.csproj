@@ -467,6 +467,7 @@
     <Content Include="assets\js\fuelux\spinbox\fuelux.spinbox.min.js.map" />
     <Content Include="assets\js\fuelux\wizard\wizard-custom.min.js.map" />
     <Content Include="assets\js\slimscroll\jquery.slimscroll.min.js.map" />
+    <Content Include="Views\Home\TabIndex.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

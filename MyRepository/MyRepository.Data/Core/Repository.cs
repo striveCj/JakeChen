@@ -51,9 +51,9 @@ namespace MyRepository.Data.Core
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public T GetById(int id)
+        public T GetById(Guid id)
         {
-            return this._entities.Find(id);
+            return this.Entities.Find(id);
         }
         #endregion
 
@@ -153,7 +153,7 @@ namespace MyRepository.Data.Core
         {
             get
             {
-                return this.Entities;
+                return this.Entities.Where(item=>item.IsDelete==false);
             }
         }
         #endregion

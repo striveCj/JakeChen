@@ -19,6 +19,9 @@ namespace MyRepository.Web.Controllers
         {
             return View();
         }
-
+        public ActionResult TabIndex()
+        {
+            return View();
+        }
     }
 }

@@ -34,7 +34,17 @@ namespace MyRepository.Web.Controllers
         {
             List<UserEntity> entityList=new List<UserEntity>();
             List <UserDto> dtoList =new List<UserDto>();
-            entityList = _repository.Table.ToList();
+            int listCount = _repository.Table.Count();
+
+            if (string.IsNullOrEmpty(param.sSearch))
+            {
+                entityList = _repository.Table.OrderBy(m => m.CreateDateTime).Skip((param.iDisplayStart / param.iDisplayLength) * param.iDisplayLength).Take(param.iDisplayLength).ToList();
+            }
+            else
+            {
+                entityList = _repository.Table.Where(item=>item.UserName.Contains(param.sSearch)).OrderBy(m => m.CreateDateTime).Skip((param.iDisplayStart / param.iDisplayLength) * param.iDisplayLength).Take(param.iDisplayLength).ToList();
+            }
+           
             foreach (var item in entityList)
             {
                 UserDto dto=new UserDto()
@@ -49,10 +59,45 @@ namespace MyRepository.Web.Controllers
             return Json(new
             {
                 sEcho = param.sEcho,
-                iTotalRecords = 50,
-                iTotalDisplayRecords = 50,
+                iTotalRecords = listCount,
+                iTotalDisplayRecords = listCount,
                 aaData = dtoList
             }, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult Delete(Guid id)
+        {
+            if (id==default(Guid))
+            {
+                throw new ArgumentException("id不能是Guid默认值",nameof(id));
+            }
+            UserEntity userEntity = _repository.GetById(id);
+            userEntity.IsDelete = true;
+            userEntity.ModifyDateTime=DateTime.Now;
+            _repository.Update(userEntity);
+            return Json(new {message = "删除成功"});
+        }
+
+        public JsonResult GetModel(Guid id)
+        {
+            UserEntity userEntity = _repository.GetById(id);
+            UserDto userDto=new UserDto()
+            {
+                Id=userEntity.Id,
+                UserName = userEntity.UserName,
+                Password = userEntity.Password,
+                Email = userEntity.Email
+            };
+            return Json(userDto);
+        }
+        public JsonResult Update(UserDto dto)
+        {
+            UserEntity userEntity = _repository.GetById(dto.Id);
+            userEntity.UserName = dto.UserName;
+            userEntity.Email = dto.Email;
+            userEntity.Password = dto.Password;
+            _repository.Update(userEntity);
+            return Json(new {message="修改成功"});
         }
     }
 }
