@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MyRepository.Models.Base;
 using MyRepository.Models.Dto;
+using MyRepository.Models.Entities;
 
 namespace MyRepository.Data.User
 {
@@ -13,6 +14,8 @@ namespace MyRepository.Data.User
         void Update(UserDto dto);
         UserDto GetModel(Guid id);
         void Delete(Guid id);
-        List<UserDto> GetList(DataTableParameter param);
+        ResultListDto GetList(DataTableParameter param);
+
+        List<UserEntity> GetList();
     }
 }

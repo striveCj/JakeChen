@@ -59,6 +59,7 @@
     <Compile Include="Base\IStartupTask.cs" />
     <Compile Include="Base\ModelMapping.cs" />
     <Compile Include="Dto\LoginDto.cs" />
+    <Compile Include="Dto\ResultListDto.cs" />
     <Compile Include="Dto\UserDto.cs" />
     <Compile Include="Entities\UserEntity.cs" />
     <Compile Include="Mapping\UserMap.cs" />

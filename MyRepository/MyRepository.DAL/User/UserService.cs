@@ -35,7 +35,11 @@ namespace MyRepository.DAL.User
             _repository.Update(userEntity);
         }
 
-        public List<UserDto> GetList(DataTableParameter param)
+        public List<UserEntity> GetList()
+        {
+            return _repository.Table.ToList();
+        }
+        public ResultListDto GetList(DataTableParameter param)
         {
             List<UserEntity> entityList = new List<UserEntity>();
             List<UserDto> dtoList = new List<UserDto>();
@@ -62,7 +66,13 @@ namespace MyRepository.DAL.User
                 dtoList.Add(dto);
             }
 
-            return dtoList;
+            return new ResultListDto
+            {
+                sEcho = param.sEcho,
+                iTotalRecords = listCount,
+                iTotalDisplayRecords = listCount,
+                aaData = dtoList
+            };
         }
 
         public UserDto GetModel(Guid id)
