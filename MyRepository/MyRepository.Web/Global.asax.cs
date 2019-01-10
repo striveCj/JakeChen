@@ -18,6 +18,7 @@ namespace MyRepository.Web
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             AutofacConfig.Register();
+            AutoMapperConfig.Register();
         }
      
     }

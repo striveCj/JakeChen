@@ -41,18 +41,10 @@ namespace MyRepository.DAL.User
         }
         public ResultListDto GetList(DataTableParameter param)
         {
-            List<UserEntity> entityList = new List<UserEntity>();
             List<UserDto> dtoList = new List<UserDto>();
             int listCount = _repository.Table.Count();
 
-            if (string.IsNullOrEmpty(param.sSearch))
-            {
-                entityList = _repository.Table.OrderBy(m => m.CreateDateTime).Skip((param.iDisplayStart / param.iDisplayLength) * param.iDisplayLength).Take(param.iDisplayLength).ToList();
-            }
-            else
-            {
-                entityList = _repository.Table.Where(item => item.UserName.Contains(param.sSearch)).OrderBy(m => m.CreateDateTime).Skip((param.iDisplayStart / param.iDisplayLength) * param.iDisplayLength).Take(param.iDisplayLength).ToList();
-            }
+            var entityList = string.IsNullOrEmpty(param.sSearch) ? _repository.Table.OrderBy(m => m.CreateDateTime).Skip((param.iDisplayStart / param.iDisplayLength) * param.iDisplayLength).Take(param.iDisplayLength).ToList() : _repository.Table.Where(item => item.UserName.Contains(param.sSearch)).OrderBy(m => m.CreateDateTime).Skip((param.iDisplayStart / param.iDisplayLength) * param.iDisplayLength).Take(param.iDisplayLength).ToList();
 
             foreach (var item in entityList)
             {
