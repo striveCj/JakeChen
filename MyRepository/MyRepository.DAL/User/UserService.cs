@@ -41,42 +41,22 @@ namespace MyRepository.DAL.User
         }
         public ResultListDto GetList(DataTableParameter param)
         {
-            List<UserDto> dtoList = new List<UserDto>();
             int listCount = _repository.Table.Count();
-
             var entityList = string.IsNullOrEmpty(param.sSearch) ? _repository.Table.OrderBy(m => m.CreateDateTime).Skip((param.iDisplayStart / param.iDisplayLength) * param.iDisplayLength).Take(param.iDisplayLength).ToList() : _repository.Table.Where(item => item.UserName.Contains(param.sSearch)).OrderBy(m => m.CreateDateTime).Skip((param.iDisplayStart / param.iDisplayLength) * param.iDisplayLength).Take(param.iDisplayLength).ToList();
-
-            foreach (var item in entityList)
-            {
-                UserDto dto = new UserDto()
-                {
-                    Id = item.Id,
-                    UserName = item.UserName,
-                    Password = item.Password,
-                    Email = item.Email
-                };
-                dtoList.Add(dto);
-            }
-
+            var userDtoList = AutoMapper.Mapper.Map<List<UserDto>>(entityList);
             return new ResultListDto
             {
                 sEcho = param.sEcho,
                 iTotalRecords = listCount,
                 iTotalDisplayRecords = listCount,
-                aaData = dtoList
+                aaData = userDtoList
             };
         }
 
         public UserDto GetModel(Guid id)
         {
             UserEntity userEntity = _repository.GetById(id);
-            UserDto userDto = new UserDto()
-            {
-                Id = userEntity.Id,
-                UserName = userEntity.UserName,
-                Password = userEntity.Password,
-                Email = userEntity.Email
-            };
+            var userDto = AutoMapper.Mapper.Map<UserDto>(userEntity);
             return userDto;
         }
 
