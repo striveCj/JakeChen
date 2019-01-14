@@ -97,6 +97,7 @@
     <Compile Include="Core\AutofacConfig.cs" />
     <Compile Include="Core\AutoMapperConfig.cs" />
     <Compile Include="Core\BaseContext.cs" />
+    <Compile Include="Core\IRepository.cs" />
     <Compile Include="Core\Repository.cs" />
     <Compile Include="Core\UnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
