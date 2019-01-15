@@ -17,11 +17,11 @@ namespace MyRepository.Web.Controllers
     public class LoginController : Controller
     {
         private readonly UnitOfWork _unitOfWork = new UnitOfWork();
-        private readonly Repository<UserEntity> _repository;
+        private readonly EfRepository<UserEntity> _efRepository;
 
         public LoginController()
         {
-            this._repository = _unitOfWork.Repository<UserEntity>(); ;
+            this._efRepository = _unitOfWork.Repository<UserEntity>(); ;
         }
 
         //登录视图
@@ -40,7 +40,7 @@ namespace MyRepository.Web.Controllers
 
         public JsonResult Login(LoginDto dto)
         {
-            UserEntity userEntity = _repository.Entities.FirstOrDefault(item => item.UserName== dto.UserName);
+            UserEntity userEntity = _efRepository.Entities.FirstOrDefault(item => item.UserName== dto.UserName);
             if (userEntity==null)
             {
                 return Json(new
@@ -83,7 +83,7 @@ namespace MyRepository.Web.Controllers
                 Password = dto.Password,
                 Email = dto.Email
             };
-            _repository.Insert(userEntity);
+            _efRepository.Insert(userEntity);
             return Json(new { successful = true,message = "添加成功"});
         }
         /// <summary>

@@ -46,8 +46,8 @@ namespace MyRepository.Data.Core
         }
         #endregion
 
-        #region Repository<T>()
-        public Repository<T> Repository<T>() where T : BaseEntity
+        #region EfRepository<T>()
+        public EfRepository<T> Repository<T>() where T : BaseEntity
         {
             if (_repositories == null)
             {
@@ -57,12 +57,12 @@ namespace MyRepository.Data.Core
             var type = typeof(T).Name;//获取当前成员名称
             if (!_repositories.ContainsKey(type))//如果repositories中不包含Name
             {
-                var repositoryType = typeof(Repository<>);//获取Repository<>类型
+                var repositoryType = typeof(EfRepository<>);//获取Repository<>类型
                 var repositoryInstance = Activator.CreateInstance(repositoryType.MakeGenericType(typeof(T)), _context);
                 _repositories.Add(type, repositoryInstance);
 
             }
-            return (Repository<T>)_repositories[type];
+            return (EfRepository<T>)_repositories[type];
 
         }
         #endregion

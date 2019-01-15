@@ -6,13 +6,13 @@ using MyRepository.Models.Base;
 
 namespace MyRepository.Data.Core
 {
-    public class Repository<T> where T : BaseEntity
+    public class EfRepository<T>: IRepository<T> where T : BaseEntity
     {
         /// <summary>
         /// 数据上下文变量
         /// </summary>
         private readonly BaseContext _context;
-        public Repository(BaseContext context)
+        public EfRepository(BaseContext context)
         {
             this._context = context;
         }
@@ -149,12 +149,14 @@ namespace MyRepository.Data.Core
         #endregion
 
         #region Table
-        public virtual IQueryable<T> Table
+        public  IQueryable<T> Table
         {
-            get
-            {
-                return this.Entities.Where(item=>item.IsDelete==false);
-            }
+            get { return this.Entities; }
+        }
+
+        public IQueryable<T> TableNoTracking
+        {
+            get { return this.Entities.AsNoTracking(); }
         }
         #endregion
 

@@ -13,5 +13,13 @@ namespace MyRepository.Data.Core
         void Insert(T entity);
         void Update(T entity);
         void Delete(T entity);
+        /// <summary>
+        /// 得到可以查询的 <see cref="System.Linq.IQueryable{T}"/> 对象。
+        /// </summary>
+        IQueryable<T> Table { get; }
+        /// <summary>
+        /// 得到可以查询的 <see cref="System.Linq.IQueryable{T}"/> 对象，但是不监控实体的状态。
+        /// </summary>
+        IQueryable<T> TableNoTracking { get; }
     }
 }
