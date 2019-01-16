@@ -29,7 +29,7 @@ namespace MyRepository.Data.Core
             Assembly serpAss = Assembly.Load("MyRepository.DAL");
             //创建serAss中的所有类的instance以此类的实现接口存储
             builder.RegisterTypes(serpAss.GetTypes()).AsImplementedInterfaces();
-
+            builder.RegisterGeneric(typeof(EfRepository<>)).As(typeof(IRepository<>)).InstancePerLifetimeScope();
             // builder.RegisterType<>().As<>();
 
             //创建一个Autofac的容器

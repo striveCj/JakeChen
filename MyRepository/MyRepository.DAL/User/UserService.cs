@@ -12,7 +12,7 @@ namespace MyRepository.DAL.User
     public class UserService : IUserService
     {
         private readonly UnitOfWork _unitOfWork = new UnitOfWork();
-        private readonly EfRepository<UserEntity> _efRepository;
+        private readonly IRepository<UserEntity> _efRepository;
 
         public UserService()
         {
